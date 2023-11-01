@@ -255,7 +255,7 @@ export default class Home {
     // Appearing animation
     gsap
       .timeline({
-        onComplete: singleHeroImageTls,
+        // onComplete: singleHeroImageTls,
       })
       .from(this.heroImages, {
         delay: 1,

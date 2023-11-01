@@ -27,10 +27,15 @@
             overflow: hidden
           svg.grid-item
             //outline: 1px solid salmon
-            transform: rotate(0deg)
-            transition: transform 20s
+            // On Hover
+            //transform: rotate(0deg)
+            //transition: transform 20s
+            //&:hover
+            //  transform: rotate(360deg)
+            // Continuous
+            animation: rotate 20s infinite linear
             &:hover
-              transform: rotate(360deg)
+              animation-play-state: paused
             circle
               stroke: #000
               stroke-width: .5
@@ -130,3 +135,9 @@
         ul
           font-family: "Courier New"
           font-size: 18px
+
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
