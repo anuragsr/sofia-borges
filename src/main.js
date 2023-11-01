@@ -10,7 +10,10 @@ import "./sass/style.sass";
 // import viteLogo from '/vite.svg' // Public folder
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+window.gsap = gsap;
 
+let scrollTl;
+window.scrollTl = scrollTl;
 const l = console.log.bind(window.console),
   loadingScreen = $(".loading-screen"),
   // Function to add the page transition screen
@@ -19,7 +22,7 @@ const l = console.log.bind(window.console),
   },
   // Function to remove the page transition screen
   pageTransitionOut = (next) => {
-    // $("body").addClass("loading");
+    $("body").addClass("loading");
 
     return gsap
       .timeline({ delay: 0.5 })
@@ -90,6 +93,108 @@ barba.init({
           pageTransitionOut(next);
         }, 1000);
         // contentAnimation(next.container)
+      },
+    },
+  ],
+  views: [
+    // Create and destroy scrollTrigger anims here
+    {
+      namespace: "home",
+      beforeEnter(data) {
+        // l("beforeEnter", "home");
+        const tl = gsap
+          .timeline()
+          .from("#section2 .border", {
+            y: 50,
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.25,
+          })
+          .to("footer", { opacity: 1, duration: 0.5 });
+
+        scrollTl = ScrollTrigger.create({
+          animation: tl,
+          markers: false,
+          trigger: "#section2",
+          start: "-25% 50%",
+          toggleActions: "play none reverse reverse",
+        });
+      },
+      afterLeave() {
+        // l("afterLeave", "home");
+        scrollTl.kill();
+      },
+    },
+    {
+      namespace: "about",
+      beforeEnter() {
+        // l("beforeEnter", "about");
+        const tl = gsap.timeline().to("footer", { opacity: 1, duration: 0.5 });
+
+        scrollTl = ScrollTrigger.create({
+          animation: tl,
+          markers: false,
+          trigger: "#section0",
+          start: "10% 0%",
+          toggleActions: "play none reverse reverse",
+        });
+      },
+      afterLeave() {
+        scrollTl.kill();
+      },
+    },
+    {
+      namespace: "work",
+      beforeEnter() {
+        // l("beforeEnter", "work");
+        const tl = gsap.timeline().to("footer", { opacity: 1, duration: 0.5 });
+
+        scrollTl = ScrollTrigger.create({
+          animation: tl,
+          markers: false,
+          trigger: "#section0",
+          start: "10% 0%",
+          toggleActions: "play none reverse reverse",
+        });
+      },
+      afterLeave() {
+        scrollTl.kill();
+      },
+    },
+    {
+      namespace: "course",
+      beforeEnter() {
+        // l("beforeEnter", "course");
+        const tl = gsap.timeline().to("footer", { opacity: 1, duration: 0.5 });
+
+        scrollTl = ScrollTrigger.create({
+          animation: tl,
+          markers: false,
+          trigger: "#section0",
+          start: "10% 0%",
+          toggleActions: "play none reverse reverse",
+        });
+      },
+      afterLeave() {
+        scrollTl.kill();
+      },
+    },
+    {
+      namespace: "hire",
+      beforeEnter() {
+        // l("beforeEnter", "hire");
+        const tl = gsap.timeline().to("footer", { opacity: 1, duration: 0.5 });
+
+        scrollTl = ScrollTrigger.create({
+          animation: tl,
+          markers: false,
+          trigger: "#section0",
+          start: "10% 0%",
+          toggleActions: "play none reverse reverse",
+        });
+      },
+      afterLeave() {
+        scrollTl.kill();
       },
     },
   ],

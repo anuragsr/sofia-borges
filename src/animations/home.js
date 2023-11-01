@@ -29,9 +29,6 @@ export default class Home {
     // Ticker animation
     this.tickerAnim();
 
-    // Scroll animation
-    this.scrollAnim();
-
     // Events
     // this.addEvents()
   }
@@ -269,25 +266,6 @@ export default class Home {
         stagger: 0.05,
         duration: 0.75,
       });
-  }
-
-  scrollAnim() {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          markers: false,
-          trigger: "#section2",
-          start: "-25% 50%",
-          toggleActions: "play none reverse reverse",
-        },
-      })
-      .from("#section2 .border", {
-        y: 50,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.25,
-      })
-      .from("footer", { opacity: 0, duration: 0.5 });
   }
 
   tickerAnim() {
