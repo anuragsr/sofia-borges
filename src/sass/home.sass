@@ -1,0 +1,132 @@
+#home
+  section
+    padding: 10vh 0
+    text-align: center
+    color: $w
+    &#section0
+      height: unset
+      padding-bottom: 0
+      .grid
+        &>div
+          @extend %j-c
+          position: relative
+          //outline: 1px solid green
+          &.hero-title > div
+            background: #303030
+            font-size: 24px
+            font-weight: 400
+            line-height: 29px
+            letter-spacing: 0
+          img
+            @extend %fhw
+            margin: 0 auto
+          &#svg1 a,
+          &#svg2 a
+            display: block
+            border-radius: 50%
+            overflow: hidden
+          svg.grid-item
+            //outline: 1px solid salmon
+            transform: rotate(0deg)
+            transition: transform 20s
+            &:hover
+              transform: rotate(360deg)
+            circle
+              stroke: #000
+              stroke-width: .5
+              fill: none
+            path
+              fill: none
+              stroke: none
+              stroke-width: 15
+              &#path1
+                transform: translate(75px, 75px) rotate(185deg)
+              &#path2
+                transform: translate(75px, 75px) rotate(-25deg)
+            text
+              fill: #000
+              font-size: 12px
+              font-family: "Courier New"
+              letter-spacing: 1px
+
+          &.flip
+            overflow: hidden
+            .animated-text
+              position: relative
+              z-index: 0
+            svg .path-for-text
+              //outline: 1px solid salmon
+              stroke: none
+              fill: none
+              stroke-width: .25
+            //img
+            //  display: none
+            .screen
+              //display: none
+              @include pa(0, 0)
+              @extend %fhw
+              //top: 25%
+              background: $pr
+              z-index: 1
+              //opacity: .9
+              //background: darkgreen
+              //outline: 1px solid salmon
+            .flip-outer
+              @include pa(0, 0)
+              @extend %fhw
+              z-index: 1
+              perspective: 1000px
+              //visibility: hidden
+              //&:hover .flip-inner
+              //  transform: scale(.75) rotateX(180deg)
+              .flip-inner
+                @extend %fhw
+                position: relative
+                //transition: transform .5s
+                transform-style: preserve-3d
+                .flip-front, .flip-back
+                  @include pa(0, 0)
+                  @extend %fhw
+                  -webkit-backface-visibility: hidden /* Safari */
+                  backface-visibility: hidden
+                  background-color: $tr
+                .flip-back
+                  transform: rotateX(180deg)
+
+    &#section1
+      height: unset
+      padding-bottom: 0
+      .carousel
+        background: #303030
+        .ticker-wrapper
+          /* the outer div */
+          position: relative
+          width: 99.9%
+          overflow: hidden
+          ul.list 
+            position: relative
+            display: inline-block
+            list-style: none
+            padding: 0
+            margin: 0
+            &.cloned 
+              @include pa(0, 0)
+            li
+              float: left
+              padding-left: 5px
+
+
+    &#section2
+      height: unset
+      padding: 0
+      .content
+        color: #302C2C
+        p
+          font-family: "Courier New"
+          font-size: 18px
+          font-weight: 400
+          line-height: 20px
+          letter-spacing: 0em
+        ul
+          font-family: "Courier New"
+          font-size: 18px

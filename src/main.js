@@ -1,21 +1,25 @@
-// import javascriptLogo from './javascript.svg' // same dir
-// import viteLogo from '/vite.svg' // Public folder
-import "./sass/style.sass";
-import { setupCounter } from "./counter.js";
+import $ from "jquery";
 import barba from "@barba/core";
 import gsap from "gsap";
-// gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, SplitText);
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
-setupCounter(document.querySelector("#counter"));
+import Home from "./animations/home";
+import "./sass/style.sass";
+// import javascriptLogo from './javascript.svg' // same dir
+// import viteLogo from '/vite.svg' // Public folder
+
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
 const l = console.log.bind(window.console),
-  loadingScreen = document.querySelector(".loading-screen"),
+  loadingScreen = $(".loading-screen"),
   // Function to add the page transition screen
   pageTransitionIn = () => {
     return gsap.to(loadingScreen, { duration: 0.5, yPercent: 15 });
   },
   // Function to remove the page transition screen
   pageTransitionOut = (next) => {
-    // document.querySelector("body").addClass("loading");
+    // $("body").addClass("loading");
 
     return gsap
       .timeline({ delay: 0.5 })
@@ -28,7 +32,7 @@ const l = console.log.bind(window.console),
           opacity: 0,
           // ease: 'power1.out',
           onComplete: () => {
-            // document.querySelector("body").removeClass("loading");
+            // $("body").removeClass("loading");
             gsap.set(loadingScreen, { yPercent: 100, opacity: 1 });
           },
         },
@@ -39,7 +43,7 @@ const l = console.log.bind(window.console),
   // Function to animate the content of each page
   contentAnimation = (next) => {
     const { container, namespace } = next,
-      body = document.querySelector("body"),
+      body = $("body"),
       tlPage = gsap.timeline().add("start"),
       enterParams = {
         duration: 0.25,
@@ -47,19 +51,19 @@ const l = console.log.bind(window.console),
         opacity: 0,
       };
 
-    // body.removeClass("work about course hire").addClass(namespace);
+    body.removeClass("work about course hire").addClass(namespace);
 
     switch (namespace) {
       case "work":
       case "about":
       case "hire":
       case "course":
-        tlPage.from(`#document.querySelector{namespace}`, enterParams, "start");
+        tlPage.from(`#${namespace}`, enterParams, "start");
         break;
 
       default: // home
         // Home animation
-        // new Home(container);
+        new Home(container);
         break;
     }
   };
