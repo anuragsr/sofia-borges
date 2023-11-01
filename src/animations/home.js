@@ -206,23 +206,24 @@ export default class Home {
             mouseenter: (e) => {
               gsap.to(flipImage, {
                 duration: 0.5,
-                scale: param.flipScale,
+                // scale: param.flipScale,
+                scale: 0.95,
                 rotateX: 180,
               });
-              gsap
-                .fromTo(
-                  tl,
-                  {
-                    progress: param.start,
-                  },
-                  {
-                    delay: 0.2,
-                    duration: 1,
-                    progress: param.end,
-                    onComplete: tl.pause,
-                  }
-                )
-                .timeScale(param.timeScale); // controls animation speed
+              // gsap
+              //   .fromTo(
+              //     tl,
+              //     {
+              //       progress: param.start,
+              //     },
+              //     {
+              //       delay: 0.2,
+              //       duration: 1,
+              //       progress: param.end,
+              //       onComplete: tl.pause,
+              //     }
+              //   )
+              //   .timeScale(param.timeScale); // controls animation speed
             },
             mouseleave: (e) => {
               gsap.to(flipImage, {
@@ -231,20 +232,20 @@ export default class Home {
                 scale: 1,
                 rotateX: 0,
               });
-              gsap
-                .fromTo(
-                  tl,
-                  {
-                    progress: tl.progress(),
-                    // progress: param.end,
-                  },
-                  {
-                    duration: 1,
-                    progress: param.start,
-                    onComplete: tl.pause,
-                  }
-                )
-                .timeScale(param.timeScale); // controls animation speed
+              // gsap
+              //   .fromTo(
+              //     tl,
+              //     {
+              //       progress: tl.progress(),
+              //       // progress: param.end,
+              //     },
+              //     {
+              //       duration: 1,
+              //       progress: param.start,
+              //       onComplete: tl.pause,
+              //     }
+              //   )
+              //   .timeScale(param.timeScale); // controls animation speed
             },
           });
 
@@ -255,7 +256,7 @@ export default class Home {
     // Appearing animation
     gsap
       .timeline({
-        // onComplete: singleHeroImageTls,
+        onComplete: singleHeroImageTls,
       })
       .from(this.heroImages, {
         delay: 1,

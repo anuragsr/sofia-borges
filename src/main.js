@@ -14,6 +14,7 @@ window.gsap = gsap;
 
 let scrollTl;
 window.scrollTl = scrollTl;
+
 const l = console.log.bind(window.console),
   loadingScreen = $(".loading-screen"),
   // Function to add the page transition screen
@@ -71,131 +72,153 @@ const l = console.log.bind(window.console),
     }
   };
 
-// Init barba with options
-barba.init({
-  transitions: [
-    {
-      async leave({ current, next }) {
-        // l("leave", current, next)
-        l("leave", current.namespace);
-        await pageTransitionIn();
-        current.container.remove();
-      },
-      enter: ({ current, next }) => {
-        // l("enter", current, next)
-        l("enter", next.namespace);
-        pageTransitionOut(next);
-      },
-      once: ({ current, next }) => {
-        // l("once", current, next)
-        l("once", next.namespace);
-        setTimeout(() => {
+$(() => {
+  setTimeout(() => {
+    $(".preload").fadeOut();
+  }, 1500);
+
+  // Prevent page change for same url
+  $(document).on("click", "a[href]", (e) => {
+    if (e.currentTarget.href === window.location.href) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  });
+
+  // Init barba with options
+  barba.init({
+    transitions: [
+      {
+        async leave({ current, next }) {
+          // l("leave", current, next)
+          l("leave", current.namespace);
+          await pageTransitionIn();
+          current.container.remove();
+        },
+        enter: ({ current, next }) => {
+          // l("enter", current, next)
+          l("enter", next.namespace);
           pageTransitionOut(next);
-        }, 1000);
-        // contentAnimation(next.container)
+        },
+        once: ({ current, next }) => {
+          // l("once", current, next)
+          l("once", next.namespace);
+          setTimeout(() => {
+            pageTransitionOut(next);
+          }, 1000);
+          // contentAnimation(next.container)
+        },
       },
-    },
-  ],
-  views: [
-    // Create and destroy scrollTrigger anims here
-    {
-      namespace: "home",
-      beforeEnter(data) {
-        // l("beforeEnter", "home");
-        const tl = gsap
-          .timeline()
-          .from("#section2 .border", {
-            y: 50,
-            opacity: 0,
-            duration: 0.5,
-            stagger: 0.25,
-          })
-          .to("footer", { opacity: 1, duration: 0.5 });
+    ],
+    views: [
+      // Create and destroy scrollTrigger anims here
+      {
+        namespace: "home",
+        beforeEnter(data) {
+          // l("beforeEnter", "home");
+          const tl = gsap
+            .timeline()
+            .from("#section2 .border", {
+              y: 50,
+              opacity: 0,
+              duration: 0.5,
+              stagger: 0.25,
+            })
+            .to("footer", { opacity: 1, duration: 0.5 });
 
-        scrollTl = ScrollTrigger.create({
-          animation: tl,
-          markers: false,
-          trigger: "#section2",
-          start: "-25% 50%",
-          toggleActions: "play none reverse reverse",
-        });
+          scrollTl = ScrollTrigger.create({
+            animation: tl,
+            markers: false,
+            trigger: "#section2",
+            start: "-25% 50%",
+            toggleActions: "play none reverse reverse",
+          });
+        },
+        afterLeave() {
+          // l("afterLeave", "home");
+          scrollTl.kill();
+        },
       },
-      afterLeave() {
-        // l("afterLeave", "home");
-        scrollTl.kill();
-      },
-    },
-    {
-      namespace: "about",
-      beforeEnter() {
-        // l("beforeEnter", "about");
-        const tl = gsap.timeline().to("footer", { opacity: 1, duration: 0.5 });
+      {
+        namespace: "about",
+        beforeEnter() {
+          // l("beforeEnter", "about");
+          const tl = gsap
+            .timeline()
+            .to("footer", { opacity: 1, duration: 0.5 });
 
-        scrollTl = ScrollTrigger.create({
-          animation: tl,
-          markers: false,
-          trigger: "#section0",
-          start: "10% 0%",
-          toggleActions: "play none reverse reverse",
-        });
+          scrollTl = ScrollTrigger.create({
+            animation: tl,
+            markers: false,
+            trigger: "#section0",
+            start: "10% 0%",
+            toggleActions: "play none reverse reverse",
+          });
+        },
+        afterLeave() {
+          scrollTl.kill();
+        },
       },
-      afterLeave() {
-        scrollTl.kill();
-      },
-    },
-    {
-      namespace: "work",
-      beforeEnter() {
-        // l("beforeEnter", "work");
-        const tl = gsap.timeline().to("footer", { opacity: 1, duration: 0.5 });
+      {
+        namespace: "work",
+        beforeEnter() {
+          // l("beforeEnter", "work");
+          const tl = gsap
+            .timeline()
+            .to("footer", { opacity: 1, duration: 0.5 });
 
-        scrollTl = ScrollTrigger.create({
-          animation: tl,
-          markers: false,
-          trigger: "#section0",
-          start: "10% 0%",
-          toggleActions: "play none reverse reverse",
-        });
+          scrollTl = ScrollTrigger.create({
+            animation: tl,
+            markers: false,
+            trigger: "#section0",
+            start: "10% 0%",
+            toggleActions: "play none reverse reverse",
+          });
+        },
+        afterLeave() {
+          scrollTl.kill();
+        },
       },
-      afterLeave() {
-        scrollTl.kill();
-      },
-    },
-    {
-      namespace: "course",
-      beforeEnter() {
-        // l("beforeEnter", "course");
-        const tl = gsap.timeline().to("footer", { opacity: 1, duration: 0.5 });
+      {
+        namespace: "course",
+        beforeEnter() {
+          // l("beforeEnter", "course");
+          const tl = gsap
+            .timeline()
+            .to("footer", { opacity: 1, duration: 0.5 });
 
-        scrollTl = ScrollTrigger.create({
-          animation: tl,
-          markers: false,
-          trigger: "#section0",
-          start: "10% 0%",
-          toggleActions: "play none reverse reverse",
-        });
+          scrollTl = ScrollTrigger.create({
+            animation: tl,
+            markers: false,
+            trigger: "#section0",
+            start: "10% 0%",
+            toggleActions: "play none reverse reverse",
+          });
+        },
+        afterLeave() {
+          scrollTl.kill();
+        },
       },
-      afterLeave() {
-        scrollTl.kill();
-      },
-    },
-    {
-      namespace: "hire",
-      beforeEnter() {
-        // l("beforeEnter", "hire");
-        const tl = gsap.timeline().to("footer", { opacity: 1, duration: 0.5 });
+      {
+        namespace: "hire",
+        beforeEnter() {
+          // l("beforeEnter", "hire");
+          const tl = gsap
+            .timeline()
+            .to("footer", { opacity: 1, duration: 0.5 });
 
-        scrollTl = ScrollTrigger.create({
-          animation: tl,
-          markers: false,
-          trigger: "#section0",
-          start: "10% 0%",
-          toggleActions: "play none reverse reverse",
-        });
+          scrollTl = ScrollTrigger.create({
+            animation: tl,
+            markers: false,
+            trigger: "#section0",
+            start: "10% 0%",
+            toggleActions: "play none reverse reverse",
+          });
+        },
+        afterLeave() {
+          scrollTl.kill();
+        },
       },
-      afterLeave() {
-        scrollTl.kill();
-      },
-    },
-  ],
+    ],
+  });
 });
