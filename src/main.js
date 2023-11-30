@@ -24,6 +24,7 @@ const l = console.log.bind(window.console),
   // Function to remove the page transition screen
   pageTransitionOut = (next) => {
     $("body").addClass("loading");
+    $("#menu").removeClass("h-48");
 
     return gsap
       .timeline({ delay: 0.5 })
@@ -83,6 +84,11 @@ $(() => {
       e.preventDefault();
       e.stopPropagation();
     }
+  });
+
+  // const menu = $("#menu");
+  $("#menu-button").click(() => {
+    $("#menu").toggleClass("h-48");
   });
 
   // Init barba with options
