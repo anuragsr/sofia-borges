@@ -6,6 +6,9 @@ export default {
       gridTemplateRows: {
         9: "repeat(9, minmax(0, 1fr))",
       },
+      order: {
+        0: "0",
+      },
     },
   },
   plugins: [],

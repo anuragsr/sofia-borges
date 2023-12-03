@@ -9,6 +9,7 @@
       .grid
         &>div
           @extend %j-c
+          //order: 10
           position: relative
           //outline: 1px solid green
           &.hero-title > div
@@ -20,8 +21,8 @@
           img
             @extend %fhw
             margin: 0 auto
-          &#svg1 a,
-          &#svg2 a
+          &.svg1 a,
+          &.svg2 a
             display: block
             border-radius: 50%
             overflow: hidden
@@ -33,7 +34,7 @@
             //&:hover
             //  transform: rotate(360deg)
             // Continuous
-            animation: rotate 20s infinite linear
+            //animation: rotate 20s infinite linear
             &:hover
               animation-play-state: paused
             circle
