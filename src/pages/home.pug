@@ -3,7 +3,7 @@
 		section#section0
 			.container.h-full.mx-auto.flex.flex-col.align-center.justify-center
 				.p-12.px-4.h-full.w-full.scale-95
-					.grid.grid-cols-6.grid-rows-3.h-full.w-full
+					.grid.grid-cols-2.grid-rows-9.h-full.w-full(class="md:grid-cols-6 md:grid-rows-3")
 						.flip.col-span-1.row-span-2
 							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
 								g(transform='translate(0, 15)')
@@ -36,6 +36,20 @@
 										img(src='img/prod/kayla.png' alt='')
 									.flip-back
 										img(src='img/prod/kayla-hover.png' alt='')
+						//#svg1(class="md:hidden")
+						//	a(href='about.html')
+						//		svg.grid-item(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%' height='100%' viewbox='0 0 150 150' preserveaspectratio='xMidYMid meet')
+						//			circle(cx='75' cy='75' r='74')
+						//			g
+						//				path#path1(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0')
+						//				text
+						//					textpath(xlink:href='#path1')
+						//						tspan(dy='10') ABOUT SOFIA
+						//			g
+						//				path#path2(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0')
+						//				text
+						//					textpath(xlink:href='#path2')
+						//						tspan(dy='10') GET TO KNOW MORE
 						.flip
 							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
 								g(transform-origin='center' transform='rotate(-90)')
@@ -95,7 +109,7 @@
 											textpath(xlink:href='#path2')
 												tspan(dy='10') GET TO KNOW MORE
 						.hero-title.col-span-2.row-span-1
-							.h-full.w-full.flex.flex-col.justify-center.align-center.rounded-full(class="lg:text-2xl")
+							.h-full.w-full.flex.flex-col.justify-center.align-center.rounded-full(class="text-md lg:text-2xl")
 								| Web Design, Development
 								br
 								|  &amp; Email Marketing
