@@ -1,15 +1,15 @@
-footer.relative
-	.content.container.mx-auto.p-12
+footer.relative.pb-12(class="md:pb-0")
+	.content.container.mx-auto.p-6(class="md:p-12")
 		hr.mb-12
-		.flex.flex-row.h-full.w-full.items-stretch.justify-center.text-left
+		.flex.flex-col.h-full.w-full.items-stretch.justify-center.text-left(class="md:flex-row")
 			.border.border-y-0.border-l-0(class='basis-1/2')
 				h4.subtitle
 					| SUBSCRIBE FOR MORE
-				form.mt-8.mt-8.flex.flex-row.items-stretch.justify-start(action='#', class='w-[75%]')
-					input.grow.mr-4.form-input.px-4.py-3.rounded-md(type='email', placeholder='Enter email here')
-					button.px-4.py-3.rounded-md.text-white.bg-black(type='submit', class='hover:bg-gray-600')
+				form.mt-8.mt-8.w-full.flex.flex-col.items-stretch.justify-start(action='#', class='md:w-[75%] md:flex-row')
+					input.grow.form-input.px-4.py-3.rounded-md(type='email', placeholder='Enter email here' class="md:mr-4")
+					button.px-4.py-3.mt-4.rounded-md.text-white.bg-black(type='submit', class='hover:bg-gray-600 md:mt-0')
 						| SUBMIT
-			.links.grid.grid-cols-1.gap-2.text-right(class='basis-1/2')
+			.links.grid.grid-cols-1.gap-6.text-xl.text-center.mt-12(class='basis-1/2 md:mt-0 md:text-right md:gap-2 md:text-base')
 				div
 					a(href='#') VIEW PORTFOLIO
 				div

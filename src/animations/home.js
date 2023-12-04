@@ -5,6 +5,8 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 const tlGlobal = [];
 window.tlGlobal = tlGlobal;
 
+const notDesktop = window.matchMedia("(max-width: 450px)").matches;
+
 // Home Animations Class
 export default class Home {
   constructor(el) {
@@ -23,8 +25,8 @@ export default class Home {
   }
 
   init() {
-    // // Hero images animation
-    // this.heroImagesAnims();
+    // Hero images animation
+    !notDesktop && this.heroImagesAnims();
 
     // Ticker animation
     this.tickerAnim();
@@ -270,7 +272,7 @@ export default class Home {
   }
 
   tickerAnim() {
-    const time = 50,
+    const time = notDesktop ? 10 : 50,
       { tickerWrapper, list, clonedList, infinite } = this;
     let listWidth = 0;
 

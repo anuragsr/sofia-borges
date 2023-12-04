@@ -389,8 +389,8 @@
 												tspan(dy='10') LET&apos;S GET STARTED
 
 		section#section1
-			.carousel.p-12.px-0.text-6xl
-				.ticker-wrapper
+			.carousel.p-12.px-0.text-2xl(class="md:text-6xl")
+				.ticker-wrapper.text-left
 					ul.list
 						li.list-item
 							span &nbsp;DO IT YOURSELF //
@@ -408,9 +408,9 @@
 							span &nbsp;DO IT YOURSELF //
 
 		section#section2
-			.content.container.mx-auto.p-12
-				.flex.flex-row.h-full.w-full.items-stretch.justify-center.text-left
-					.border.border-y-0.border-l-0(class='basis-1/4')
+			.content.container.mx-auto.p-6(class="md:p-12")
+				.flex.flex-col.h-full.w-full.items-stretch.justify-center.text-left(class="md:flex-row")
+					.border.border-y-0.border-l-0.mb-12(class='md:basis-1/4 md:mb-0')
 						h4.subtitle
 							| BUILD YOUR OWN
 							br
@@ -421,7 +421,7 @@
 							| web creation? This is the perfect quick and efficient
 							| course for you where I guide you every step of
 							| the way using one of the world&rsquo;s easiest web builders.
-					.border.border-y-0.border-l-0.px-8(class='basis-1/2')
+					.border.border-y-0.border-l-0.order-1(class='md:basis-1/2 md:px-8 md:order-0')
 						h4.subtitle
 							| COURSE
 							br
@@ -435,7 +435,7 @@
 								li HOW TO LAUNCH YOUR WEBSITE
 							p.mt-8
 								| All of the above is included in your course &amp; more!
-					.border.border-0.flex.flex-col.items-center.justify-between(class='basis-1/4')
+					.border.border-0.flex.flex-col.items-center.justify-between.mb-12(class='h-[25vh] md:h-auto md:basis-1/4 md:mb-0')
 						div
 							h1.text-4xl.font-bold $480
 						div

@@ -106,6 +106,8 @@
     &#section1
       height: unset
       padding-bottom: 0
+      @include media("<=768px")
+        padding-top: 0
       .carousel
         background: #303030
         .ticker-wrapper
@@ -113,22 +115,26 @@
           position: relative
           width: 99.9%
           overflow: hidden
+          white-space: nowrap
           ul.list 
             position: relative
             display: inline-block
+            //display: flex
             list-style: none
             padding: 0
             margin: 0
             &.cloned 
               @include pa(0, 0)
             li
-              float: left
+              //float: left
               padding-left: 5px
-
+              display: inline-block
 
     &#section2
       height: unset
       padding: 0
+      @include media("<=1024px")
+        padding-top: 5vh
       .content
         color: #302C2C
         p
