@@ -26,6 +26,7 @@
             display: block
             border-radius: 50%
             overflow: hidden
+            background: $w
           svg.grid-item
             //outline: 1px solid salmon
             // On Hover
@@ -34,7 +35,7 @@
             //&:hover
             //  transform: rotate(360deg)
             // Continuous
-            //animation: rotate 20s infinite linear
+            animation: rotate 20s infinite linear
             &:hover
               animation-play-state: paused
             circle
@@ -45,9 +46,9 @@
               fill: none
               stroke: none
               stroke-width: 15
-              &#path1
+              &#path1, &#path3
                 transform: translate(75px, 75px) rotate(185deg)
-              &#path2
+              &#path2, &#path4
                 transform: translate(75px, 75px) rotate(-25deg)
             text
               fill: #000
@@ -71,7 +72,7 @@
             //img
             //  display: none
             .screen
-              //display: none
+              display: none
               @include pa(0, 0)
               @extend %fhw
               //top: 25%

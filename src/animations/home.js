@@ -23,8 +23,8 @@ export default class Home {
   }
 
   init() {
-    // Hero images animation
-    this.heroImagesAnims();
+    // // Hero images animation
+    // this.heroImagesAnims();
 
     // Ticker animation
     this.tickerAnim();

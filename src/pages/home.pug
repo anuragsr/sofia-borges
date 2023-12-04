@@ -3,7 +3,8 @@
 		section#section0
 			.container.h-full.mx-auto.flex.flex-col.align-center.justify-center
 				.p-12.px-4.h-full.w-full.scale-95
-					.grid.grid-cols-2.grid-rows-9.h-full.w-full(class="md:grid-cols-6 md:grid-rows-3")
+					// Desktop
+					.grid.grid-cols-6.grid-rows-3.h-full.w-full.hidden(class="md:grid")
 						.flip.col-span-1.row-span-2
 							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
 								g(transform='translate(0, 15)')
@@ -36,20 +37,6 @@
 										img(src='img/prod/kayla.png' alt='')
 									.flip-back
 										img(src='img/prod/kayla-hover.png' alt='')
-						.svg1(class="md:!hidden")
-							a(href='about.html')
-								svg.grid-item(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%' height='100%' viewbox='0 0 150 150' preserveaspectratio='xMidYMid meet')
-									circle(cx='75' cy='75' r='74')
-									g
-										path#path1(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0')
-										text
-											textpath(xlink:href='#path1')
-												tspan(dy='10') ABOUT SOFIA
-									g
-										path#path2(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0')
-										text
-											textpath(xlink:href='#path2')
-												tspan(dy='10') GET TO KNOW MORE
 						.flip
 							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
 								g(transform-origin='center' transform='rotate(-90)')
@@ -94,19 +81,19 @@
 										img(src='img/prod/pasta.png' alt='')
 									.flip-back
 										img(src='img/prod/pasta-hover.png' alt='')
-						.svg1(class="!hidden md:!flex")
+						.svg1
 							a(href='about.html')
 								svg.grid-item(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%' height='100%' viewbox='0 0 150 150' preserveaspectratio='xMidYMid meet')
 									circle(cx='75' cy='75' r='74')
 									g
-										path#path3(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0')
+										path#path1(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0')
 										text
-											textpath(xlink:href='#path3')
+											textpath(xlink:href='#path1')
 												tspan(dy='10') ABOUT SOFIA
 									g
-										path#path4(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0')
+										path#path2(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0')
 										text
-											textpath(xlink:href='#path4')
+											textpath(xlink:href='#path2')
 												tspan(dy='10') GET TO KNOW MORE
 						.hero-title.col-span-2.row-span-1
 							.h-full.w-full.flex.flex-col.justify-center.align-center.rounded-full(class="text-md lg:text-2xl")
@@ -206,6 +193,199 @@
 										path#path2(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0' transform='translate(75, 75) rotate(-25)' fill='none' stroke='none' stroke-width='15')
 										text
 											textpath(xlink:href='#path2')
+												tspan(dy='10') LET&apos;S GET STARTED
+
+
+					// Tab / mobile
+					.grid.grid-cols-2.grid-rows-9.h-full.w-full(class="md:hidden")
+						.flip.col-span-1.row-span-2
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform='translate(0, 15)')
+									path.path-for-text(d=[
+										"M 10 175",
+										"L 10 0",
+										"M 10 7.960204194457796e-15",
+										"A 65 65 0 1 1 140 0",
+										"L 140 175",
+										"M 140 175",
+										"A 65 65 0 1 1 10 175",
+									].join(' '))
+							.screen
+							.animated-text.text-black.text-3xl KAYLA
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/niluu.png' alt='')
+									.flip-back
+										img(src='img/prod/niluu-hover.png' alt='')
+						.flip
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform-origin='center' transform='rotate(-90)')
+									circle.path-for-text(cx='75' cy='75' r='67' fill='none' stroke='none' stroke-width='.1')
+							.screen
+							.animated-text.text-black.text-3xl NILUU
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/kayla.png' alt='')
+									.flip-back
+										img(src='img/prod/kayla-hover.png' alt='')
+						.svg1
+							a(href='about.html')
+								svg.grid-item(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%' height='100%' viewbox='0 0 150 150' preserveaspectratio='xMidYMid meet')
+									circle(cx='75' cy='75' r='74')
+									g
+										path#path3(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0')
+										text
+											textpath(xlink:href='#path3')
+												tspan(dy='10') ABOUT SOFIA
+									g
+										path#path4(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0')
+										text
+											textpath(xlink:href='#path4')
+												tspan(dy='10') GET TO KNOW MORE
+						.flip
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform-origin='center' transform='rotate(-90)')
+									circle.path-for-text(cx='75' cy='75' r='67' fill='none' stroke='none' stroke-width='.1')
+							.screen
+							.animated-text.text-black.text-3xl SHOP&nbsp;LX
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/moma.png' alt='')
+									.flip-back
+										img(src='img/prod/moma-hover.png' alt='')
+						.flip
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform-origin='center' transform='rotate(-90)')
+									circle.path-for-text(cx='75' cy='75' r='67' fill='none' stroke='none' stroke-width='.1')
+							.screen
+							.animated-text.text-black.text-3xl NUDE
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/nude.png' alt='')
+									.flip-back
+										img(src='img/prod/nude-hover.png' alt='')
+						.hero-title.col-span-2.row-span-1
+							.h-full.w-full.flex.flex-col.justify-center.align-center.rounded-full.text-2xl
+								| Web Design, Development
+								br
+								|  &amp; Email Marketing
+						.flip.col-span-2.row-span-1
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform-origin='center' transform='translate(12, 0) scale(.8, 1) rotate(90)')
+									path.path-for-text(d=[
+										"M 10 175",
+										"L 10 0",
+										"M 10 7.960204194457796e-15",
+										"A 65 65 0 1 1 140 0",
+										"L 140 175",
+										"M 140 175",
+										"A 65 65 0 1 1 10 175",
+									].join(' '))
+							.screen
+							.animated-text.text-black.text-3xl XU&nbsp;COLLECTIVE
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/delaheart.png' alt='')
+									.flip-back
+										img(src='img/prod/delaheart-hover.png' alt='')
+						.flip
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform-origin='center' transform='rotate(-90)')
+									circle.path-for-text(cx='75' cy='75' r='67' fill='none' stroke='none' stroke-width='.1')
+							.screen
+							.animated-text.text-black.text-3xl PASTA
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/xu.png' alt='')
+									.flip-back
+										img(src='img/prod/xu-hover.png' alt='')
+						.flip
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform-origin='center' transform='rotate(-90)')
+									circle.path-for-text(cx='75' cy='75' r='67' fill='none' stroke='none' stroke-width='.1')
+							.screen
+							.animated-text.text-black.text-3xl DLH
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/freddys.png' alt='')
+									.flip-back
+										img(src='img/prod/freddys-hover.png' alt='')
+						.flip.col-span-2.row-span-1
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform-origin='center' transform='translate(12, 0) scale(.8, 1) rotate(90)')
+									path.path-for-text(d=[
+										"M 10 175",
+										"L 10 0",
+										"M 10 7.960204194457796e-15",
+										"A 65 65 0 1 1 140 0",
+										"L 140 175",
+										"M 140 175",
+										"A 65 65 0 1 1 10 175",
+									].join(' '))
+							.screen
+							.animated-text.text-black.text-3xl HORIZONTAL&nbsp;TITLE
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/pasta.png' alt='')
+									.flip-back
+										img(src='img/prod/pasta-hover.png' alt='')
+						.flip
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform-origin='center' transform='rotate(-90)')
+									circle.path-for-text(cx='75' cy='75' r='67' fill='none' stroke='none' stroke-width='.1')
+							.screen
+							.animated-text.text-black.text-3xl PASTA
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/fiome.png' alt='')
+									.flip-back
+										img(src='img/prod/fiome-hover.png' alt='')
+						.flip
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform-origin='center' transform='rotate(-90)')
+									circle.path-for-text(cx='75' cy='75' r='67' fill='none' stroke='none' stroke-width='.1')
+							.screen
+							.animated-text.text-black.text-3xl MOM&apos;S&nbsp;EYE
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/shoplx.png' alt='')
+									.flip-back
+										img(src='img/prod/shoplx-hover.png' alt='')
+						.flip
+							svg.absolute(width='100%' height='100%' viewbox='0 0 150 150' xmlns='http://www.w3.org/2000/svg')
+								g(transform-origin='center' transform='rotate(-90)')
+									circle.path-for-text(cx='75' cy='75' r='67' fill='none' stroke='none' stroke-width='.1')
+							.screen
+							.animated-text.text-black.text-3xl MOM&apos;S&nbsp;EYE
+							.flip-outer
+								.flip-inner
+									.flip-front
+										img(src='img/prod/cozy.png' alt='')
+									.flip-back
+										img(src='img/prod/cozy-hover.png' alt='')
+						.svg2
+							a(href='hire.html')
+								svg.grid-item(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%' height='100%' viewbox='0 0 150 150' preserveaspectratio='xMidYMid meet')
+									circle(cx='75' cy='75' r='74')
+									g
+										path#path3(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0' transform='translate(75, 75) rotate(185)' fill='none' stroke='none' stroke-width='15')
+										text
+											textpath(xlink:href='#path3')
+												tspan(dy='10') WORK WITH ME
+									g
+										path#path4(d='M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0' transform='translate(75, 75) rotate(-25)' fill='none' stroke='none' stroke-width='15')
+										text
+											textpath(xlink:href='#path4')
 												tspan(dy='10') LET&apos;S GET STARTED
 
 		section#section1
