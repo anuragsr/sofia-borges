@@ -272,7 +272,7 @@ export default class Home {
   }
 
   tickerAnim() {
-    const time = notDesktop ? 10 : 50,
+    const time = 50,
       { tickerWrapper, list, clonedList, infinite } = this;
     let listWidth = 0;
 
