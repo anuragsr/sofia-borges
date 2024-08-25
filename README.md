@@ -2,7 +2,7 @@
 
 A website for a Miami based web designer using barba.js and gsap
 
-[Demo](https://envisagecyberart.in/projects/applications/slideshow)
+[Demo](https://envisagecyberart.in/projects/websites/sofia-borges)
 
 ![Screenshot](Screenshot.png?raw=true)
 

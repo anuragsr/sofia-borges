@@ -18,4 +18,5 @@ export default defineConfig({
       },
     },
   },
+  // base: "/projects/websites/sofia-borges/"
 });
